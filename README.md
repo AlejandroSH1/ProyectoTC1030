@@ -6,6 +6,6 @@ Alfredo Alejandro Soto Herrera
   
   A01711368
 
-## Agencia automovilística
+## Agencia vehicular
 
-Este proyecto consiste en la creación de una aplicación que permita la gestión de una agencia de medios de transporte, tales como; carros, motocicletas, bicicletas y cuatrimotos.
+Este proyecto consiste en la creación de una aplicación que permita al dueño de un negocio de una agencia de medios de transporte, tales como; carros, motocicletas, bicicletas y cuatrimotos. La gestión de este, pudiendo añadir nuevos vehiculos y sus datos para la venta de estos.
