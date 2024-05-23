@@ -26,6 +26,7 @@ protected:
 
 // Declaro los metodos de la clase
 public:
+  // Constructores
   Vehiculo(){
     marca = "Na";
     modelo = "Na";
@@ -39,24 +40,26 @@ public:
     uso = u;
     year = yr;
     valor_compra = val_com;
-  }
+  };
+  // Getters
   string getMarca(){
     return marca;
-  }
+  };
   string getModelo(){
     return modelo;
-  }
+  };
   double getUso(){
     return uso;
-  }
+  };
   int getYear(){
     return year;
-  }
+  };
   double getValorCompra(){
     return valor_compra;
-  }
+  };
+
   virtual void mostrar_info() = 0;
-  virtual void calcula_precio_venta() = 0;
+  virtual double calcula_precio_venta() = 0;
 
 };
 
@@ -69,12 +72,14 @@ private:
 
 // Declaro los metodos de la clase
 public:
+// Constructores  
   Carro(): Vehiculo("Na", "Na", 10000, 2013, 15000){};
   Carro(string mar, string mod, double u, int yr, double val_com, int n_pue, string tip_gas, double mot): Vehiculo(mar, mod, u, yr, val_com),
     num_puertas(n_pue),
     tipo_gasolina(tip_gas),
     motor(mot){};
 
+  // Getters
   int getNumPuertas(){
     return num_puertas;
   };
@@ -83,41 +88,43 @@ public:
     return tipo_gasolina;
   };
 
-  string getMotor(){
+  double getMotor(){
     return motor;
   };
 
+  // Método para calcular un precio para la venta del carro
   double calcula_precio_venta(){
     double venta_inicial = valor_compra;
-    if (u < 20000){
+    if (uso < 20000){
       venta_inicial = venta_inicial + 10000;
     }
     else
       venta_inicial = venta_inicial - 500;
-    if (yr > 2020){
+    if (year > 2020){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
     venta_inicial = venta_inicial - 500;
     if (num_puertas > 4){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
       venta_inicial = venta_inicial - 500;
     if (tipo_gasolina == "roja"){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
       venta_inicial = venta_inicial - 500;
     if (motor > 2.0){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
       venta_inicial = venta_inicial - 500;
     double venta_final = venta_inicial * 1.15;
     return venta_final;
   };
 
+  // Mostramos la información del carro
   void mostrar_info(){
     cout << "Marca: " << marca << endl;
     cout << "Modelo: " << modelo << endl;
@@ -137,10 +144,13 @@ private:
 
 // Declaro los metodos de la clase
 public:
+  // Constructores
   Motocicleta(): Vehiculo("Na", "Na", 10000, 2013, 15000){};
   Motocicleta(string mar, string mod, double u, int yr, double val_com, string tip_mot, double mot): Vehiculo(mar, mod, u, yr, val_com),
     tipo_moto(tip_mot),
     motor(mot){};
+
+  // Getters
   string getTipoMoto(){
     return tipo_moto;
   };
@@ -149,32 +159,34 @@ public:
     return motor;
   };
 
+  // Método para calcular un precio para la venta de una moto
   double calcula_precio_venta(){
     double venta_inicial = valor_compra;
-    if (u < 20000){
+    if (uso < 20000){
       venta_inicial = venta_inicial + 10000;
     }
     else
       venta_inicial = venta_inicial - 500;
-    if (yr > 2020){
+    if (year > 2020){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
     venta_inicial = venta_inicial - 500;
-    if (tipo_mot == "deportiva"){
+    if (tipo_moto == "deportiva"){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
       venta_inicial = venta_inicial - 500;
     if (motor > 450){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
       venta_inicial = venta_inicial - 500;
     double venta_final = venta_inicial * 1.15;
     return venta_final;
   };
 
+  // Mostramos la información general de la moto
   void mostrar_info(){
     cout << "Marca: " << marca << endl;
     cout << "Modelo: " << modelo << endl;
@@ -193,11 +205,13 @@ private:
 
 // Declaro los metodos de la clase
 public:
+  // Constructores
   Cuatrimoto(): Vehiculo("Na", "Na", 10000, 2013, 15000){};
   Cuatrimoto(string mar, string mod, double u, int yr, double val_com, int cap, string tip_ter): Vehiculo(mar, mod, u, yr, val_com),
     capacidad(cap),
-    tipo_terreno(tip_gas){};
+    tipo_terreno(tip_ter){};
 
+  // Getters
   int getCapacidad(){
     return capacidad;
   };
@@ -206,32 +220,34 @@ public:
     return tipo_terreno;
   };
 
+  // Método para calcular un precio para la venta de una cuatrimoto
   double calcula_precio_venta(){
     double venta_inicial = valor_compra;
-    if (u < 20000){
+    if (uso < 20000){
       venta_inicial = venta_inicial + 10000;
     }
     else
       venta_inicial = venta_inicial - 500;
-    if (yr > 2020){
+    if (year > 2020){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
     venta_inicial = venta_inicial - 500;
     if (capacidad > 2){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
       venta_inicial = venta_inicial - 500;
     if (tipo_terreno == "todo terreno"){
       venta_inicial = venta_inicial + 10000;
-    };
+    }
     else
       venta_inicial = venta_inicial - 500;
     double venta_final = venta_inicial * 1.15;
     return venta_final;
   };
 
+  // Mostramos la información general de la cuatrimoto
   void mostrar_info(){
     cout << "Marca: " << marca << endl;
     cout << "Modelo: " << modelo << endl;
@@ -250,11 +266,13 @@ private:
 
 // Declaro los metodos de la clase
 public:
+  // Constructores
   Bicicleta(): Vehiculo("Na", "Na", 10000, 2013, 15000){};
   Bicicleta(string mar, string mod, double u, int yr, double val_com, bool vel, string tip): Vehiculo(mar, mod, u, yr, val_com),
     velocidades(vel),
     tipo(tip){};
 
+  // Getters
   bool getVelocidades(){
     return velocidades;
   };
@@ -263,32 +281,34 @@ public:
     return tipo;
   };
 
+  // Método para calcular un precio para la venta de una bicicleta
   double calcula_precio_venta(){
     double venta_inicial = valor_compra;
-    if (u < 20000){
+    if (uso < 20000){
       venta_inicial = venta_inicial + 1000;
     }
     else
       venta_inicial = venta_inicial - 50;
-    if (yr > 2020){
+    if (year > 2020){
       venta_inicial = venta_inicial + 1000;
-    };
+    }
     else
     venta_inicial = venta_inicial - 50;
     if (velocidades == true){
       venta_inicial = venta_inicial + 1000;
-    };
+    }
     else
       venta_inicial = venta_inicial - 50;
     if (tipo == "pista"){
       venta_inicial = venta_inicial + 1000;
-    };
+    }
     else
       venta_inicial = venta_inicial - 500;
     double venta_final = venta_inicial * 1.15;
     return venta_final;
   };
 
+  // Mostramos la información general de la bicileta
   void mostrar_info(){
     cout << "Marca: " << marca << endl;
     cout << "Modelo: " << modelo << endl;
