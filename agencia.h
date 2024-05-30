@@ -2,7 +2,7 @@
 #define AGENCIA_H
 
 #include <iostream>
-#include "vehiculo.h";
+#include "vehiculo.h"
 
 using namespace std;
 
@@ -40,13 +40,10 @@ public:
   void mostrar_info(){
     for (int i = 0; i < cantidad; i++){
       vhc[i]->mostrar_info();
+      dinero = dinero - vhc[i]->getValorCompra() - vhc[i]->calcula_precio_venta();
+      cout << dinero << endl;
     }
-  }
-
-  double calcula_dinero(double dinero, double valor_compra){
-    dinero = dinero - valor_compra;
-    return dinero;
-  }
+  }  
 };
 
 #endif
