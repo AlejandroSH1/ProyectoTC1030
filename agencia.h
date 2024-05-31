@@ -14,7 +14,7 @@ private:
 
 public:
   Agencia(){
-    cantidad = 10;
+    cantidad = 0;
     dinero = 500000;
   };
   void agregar_carro(string mar, string mod, double u, int yr, double val_com, int n_pue, string tip_gas, double mot){
