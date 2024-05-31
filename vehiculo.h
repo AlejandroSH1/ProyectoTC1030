@@ -115,7 +115,7 @@ public:
     }
     else
       venta_inicial = venta_inicial - 500;
-    if (motor > 2.0){
+    if (motor >= 2.0){
       venta_inicial = venta_inicial + 10000;
     }
     else
@@ -128,11 +128,11 @@ public:
   void mostrar_info(){
     cout << "Marca: " << marca << endl;
     cout << "Modelo: " << modelo << endl;
-    cout << "Uso: " << uso << endl;
+    cout << "Uso: " << uso << " km" << endl;
     cout << "Año: " << year << endl;
     cout << "Numero de puertas: " << num_puertas << endl;
     cout << "Tipo de gasolina: " << tipo_gasolina << endl;
-    cout << "Motor: " << motor << endl;
+    cout << "Motor: " << motor << " L" << endl;
   };
 };
 
@@ -140,13 +140,13 @@ class Motocicleta : public Vehiculo{
 // Declaro variables de instancia
 private:
   string tipo_moto;
-  double motor;
+  int motor;
 
 // Declaro los metodos de la clase
 public:
   // Constructores
   Motocicleta(): Vehiculo("Na", "Na", 10000, 2013, 15000){};
-  Motocicleta(string mar, string mod, double u, int yr, double val_com, string tip_mot, double mot): Vehiculo(mar, mod, u, yr, val_com),
+  Motocicleta(string mar, string mod, double u, int yr, double val_com, string tip_mot, int mot): Vehiculo(mar, mod, u, yr, val_com),
     tipo_moto(tip_mot),
     motor(mot){};
 
@@ -177,7 +177,7 @@ public:
     }
     else
       venta_inicial = venta_inicial - 500;
-    if (motor > 450){
+    if (motor >= 450){
       venta_inicial = venta_inicial + 10000;
     }
     else
@@ -190,10 +190,10 @@ public:
   void mostrar_info(){
     cout << "Marca: " << marca << endl;
     cout << "Modelo: " << modelo << endl;
-    cout << "Uso: " << uso << endl;
+    cout << "Uso: " << uso << " km" << endl;
     cout << "Año: " << year << endl;
     cout << "Tipo de moto: " << tipo_moto << endl;
-    cout << "Motor: " << motor << endl;
+    cout << "Motor: " << motor << " cc" << endl;
   };
 };
 
@@ -251,7 +251,7 @@ public:
   void mostrar_info(){
     cout << "Marca: " << marca << endl;
     cout << "Modelo: " << modelo << endl;
-    cout << "Uso: " << uso << endl;
+    cout << "Uso: " << uso << " km" << endl;
     cout << "Año: " << year << endl;
     cout << "Numero de pasajeros: " << capacidad << endl;
     cout << "Tipo de terreno: " << tipo_terreno << endl;
@@ -312,9 +312,9 @@ public:
   void mostrar_info(){
     cout << "Marca: " << marca << endl;
     cout << "Modelo: " << modelo << endl;
-    cout << "Uso: " << uso << endl;
+    cout << "Uso: " << uso << " km" << endl;
     cout << "Año: " << year << endl;
-    cout << "Velocidades: " << velocidades << endl;
+    cout << "Velocidades: " << boolalpha << velocidades << endl;
     cout << "Tipo: " << tipo << endl;
   };
 };
