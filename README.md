@@ -16,6 +16,8 @@ Este proyecto consiste en la creación de una aplicación que permita al dueño 
 
 * Que se intentara crear una clase hija dentro de vehiculo.h sin la función mostrar_info() y calcula_precio_venta()
 
+* Que cuando se le pidan valores al usuario no ingrese el tipo de variable correcto, es decir, que se le solicite un string y el usuario ingresa un int.
+
 ---
 
 ### Corecciones Avances
@@ -33,6 +35,10 @@ Avance 2
 Avance 3
 
 - Sin correcciones
+
+Avance 4
+
+- Agregar interacción con el usuario. Incluí "cin" en el main.cpp
 
 ---
 
