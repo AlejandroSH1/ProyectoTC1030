@@ -27,6 +27,8 @@ private:
 public:
   Agencia() : cantidad(0),dinero(500000){}; // Constructor por omisión
 
+  void crea_agencia();
+
   void agregar_carro(string mar, string mod, double u, int yr, double val_com,
   int n_pue, string tip_gas, double mot);
 
@@ -40,6 +42,34 @@ public:
   double val_com, bool vel, string tip);
 
   void mostrar_info();
+};
+
+/**
+  * crea_agencia() crea 5 vehiculos a la agencia, con el objetivo de no tener 
+  * que crear uno por uno.
+  *
+  * Agrega vehiculos al vector de vehiculos.
+  *
+  * @param
+  * @return void
+*/
+void Agencia :: crea_agencia(){
+  //new crea el objeto en tiempo de ejecución para usar polimorfismo
+  vhc[cantidad] = new Carro("Toyota" , "Corolla", 10000, 2013, 100000, 4, 
+    "verde", 1.6);
+  cantidad++;
+  vhc[cantidad] = new Carro("BMW" , "Series 1", 50000, 2011, 200000, 4, 
+    "verde", 2.0);
+  cantidad++;
+  vhc[cantidad] = new Motocicleta("Honda", "Choper", 20000, 2019, 230000, 
+    "deportiva", 250);
+  cantidad++;
+  vhc[cantidad] = new Cuatrimoto("Suzuki", "GSX", 15000, 2022, 300000, 3, 
+    "todo terreno");
+  cantidad++;
+  vhc[cantidad] = new Bicicleta("Caloi", "Cruiser", 5000, 2020, 90000, true, 
+   "pista");
+  cantidad++;
 };
 
 /**
