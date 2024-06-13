@@ -35,7 +35,7 @@ int main(){
   while (agregar == "si") {
     // Ahora preguntamos al usuario que tipo de vehículo desea agregar
     string tipo;
-    cout << "Ingresa el tipo de vehiculo (carro, motocicleta, cuatrimoto, bicicleta): ";
+    cout << "Tipo de vehiculo (carro, motocicleta, cuatrimoto, bicicleta): ";
     cin >> tipo;
     
     if (tipo == "carro") {
@@ -109,8 +109,8 @@ int main(){
       cout << "Ingresa el tipo de terreno (ej. todo terreno): ";
       cin >> terreno;
       // Agregamos el vehiculo al arreglo con los datos ingresados
-      agencia.agregar_cuatrimoto(marca, modelo, kilometraje, año, precio, capacidad,
-        terreno);
+      agencia.agregar_cuatrimoto(marca, modelo, kilometraje, año, precio, 
+        capacidad, terreno);
     } 
     else if (tipo == "bicicleta") {
       // Creamos las variables que el usuario ingresará
